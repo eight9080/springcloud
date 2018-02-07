@@ -10,11 +10,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import ro.dg.cloudex.config.ribbontimeapp.RibbonTimeConfig;
 
 @SpringBootApplication
 @RestController
 //@EnableDiscoveryClient
-@RibbonClient(name="time-service")
+@RibbonClient(name="time-service", configuration = RibbonTimeConfig.class)
 public class RibbonTimeAppApplication {
 
 	@Autowired
